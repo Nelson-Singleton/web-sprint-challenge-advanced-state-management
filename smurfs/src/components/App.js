@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import "./App.css";
 
-import {fetchSmurfs, postSmurfs} from '../store/actions/SmurfActions'
+import {fetchSmurfs} from '../store/actions/SmurfActions'
 import {connect} from 'react-redux'
 
+import SmurfForm from '../components/smurfForm'
 
-function App ({fetchSmurfs}, {postSmurfs}) {
+
+function App ({fetchSmurfs}) {
   useEffect(() => {
     fetchSmurfs();
   }, [fetchSmurfs])
@@ -16,6 +18,7 @@ function App ({fetchSmurfs}, {postSmurfs}) {
         <div>Welcome to your state management version of Smurfs!</div>
         <div>Start inside of your `src/index.js` file!</div>
         <div>Have fun!</div>
+        <SmurfForm />
       </div>
     );
   }
@@ -30,5 +33,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  {fetchSmurfs, postSmurfs}
+  {fetchSmurfs}
   ) (App);

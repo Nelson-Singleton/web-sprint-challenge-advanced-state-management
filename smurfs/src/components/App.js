@@ -1,7 +1,12 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
-class App extends Component {
-  render() {
+
+import {fetchSmurfs, postSmurfs} from '../store/actions/SmurfActions'
+import {connect} from 'react-redux'
+
+
+function App (fetchSmurfs, postSmurfs) {
+  
     return (
       <div className="App">
         <h1>SMURFS! W/Redux</h1>
@@ -11,6 +16,16 @@ class App extends Component {
       </div>
     );
   }
-}
 
-export default App;
+
+const mapStateToProps = state => { 
+  return { 
+    smurfs: state.smurfs,
+    loadingSmurfs: state.loadingSmurfs,
+    sendingSmurfs: state.sendingSmurfs,
+  }} 
+
+export default connect(
+  mapStateToProps,
+  {fetchSmurfs, postSmurfs}
+  ) (App);

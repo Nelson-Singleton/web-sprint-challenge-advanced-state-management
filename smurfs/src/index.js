@@ -13,7 +13,7 @@ import {smurfReducer} from './store/reducers/SmurfReducer'
 const store = createStore(smurfReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
-<Provider>
+<Provider store = {store}>
 <App />
 </Provider>
 , document.getElementById("root"));

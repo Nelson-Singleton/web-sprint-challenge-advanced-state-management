@@ -10,7 +10,7 @@ import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 import {smurfReducer} from './store/reducers/SmurfReducer'
 
-const store = createStore(smurfReducer, applyMiddleware(thunk))
+const store = createStore(smurfReducer, applyMiddleware(thunk, logger))
 
 ReactDOM.render(
 <Provider store = {store}>

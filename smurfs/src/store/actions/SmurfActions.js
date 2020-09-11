@@ -4,6 +4,7 @@ import axios from 'axios'
 export const FETCH_SMURFS = "FETCH_SMURFS"
 export const FETCH_SMURFS_SUCCESS = "FETCH_SMURFS_SUCCESS"
 export const FETCH_SMURFS_ERROR = "FETCH_SMURFS_ERROR"
+export const PURGE_VILLAGE = "PURGE_VILLAGE"
 
 // export const POST_SMURFS = "POST_SMURFS"
 // export const POST_SMURFS_SUCCESS = "POST_SMURFS_SUCCESS"
@@ -31,6 +32,13 @@ export const fetchSmurfs = () => {
             
     }
 }
+
+export const purgeVillage = () => {
+    return {
+    type: PURGE_VILLAGE
+}}
+
+
 
 // export const postSmurfs = (smurf) => {
 //     return(dispatch) => {

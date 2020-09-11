@@ -2,7 +2,7 @@ import React from 'react'
 
 function Smurf(props) {
     return(
-        <div>
+        <div className = "smurfcard">
             <h2>Smurf: # {props.someSmurf.id}</h2>
             <h2>Name: {props.someSmurf.name}</h2>
             <h2>Age: {props.someSmurf.age}</h2>

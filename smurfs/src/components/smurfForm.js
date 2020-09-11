@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import {connect} from 'react-redux'
-//import {postSmurfs} from '../store/actions/SmurfActions'
+import {purgeVillage} from '../store/actions/SmurfActions'
 //import {formReducer, initialSmurfValues} from '../store/reducers/FormReducer'
 //import dispatch from 'react'
 import axios from 'axios'
@@ -60,7 +60,7 @@ function SmurfForm() {
         
         <div className = "">
             <h1>Would you like to join the smurf village?</h1>
-            <form>
+            <form >
                 Name: <input
                 type = "text"
                 name = "name"
@@ -83,7 +83,8 @@ function SmurfForm() {
                 />                                 
             </form>
 
-            <button onClick = {postSmurfs(smurf)}>Join now</button>
+            <button onClick = {() => postSmurfs(smurf)}>Join now</button>
+            <button onClick = {() => purgeVillage}> Gargamel attacks! </button>
         </div>
     )
 }
@@ -97,5 +98,5 @@ const mapStateToProps = state => {
 
 export default connect (
     mapStateToProps,
-    {}
+    {purgeVillage}
 ) (SmurfForm)

@@ -1,9 +1,9 @@
-import {FETCH_SMURFS, FETCH_SMURFS_SUCCESS, FETCH_SMURFS_ERROR, POST_SMURFS, POST_SMURFS_SUCCESS, POST_SMURFS_ERROR} from '../actions/SmurfActions'
+import {FETCH_SMURFS, FETCH_SMURFS_SUCCESS, FETCH_SMURFS_ERROR, PURGE_VILLAGE, POST_SMURFS, POST_SMURFS_SUCCESS, POST_SMURFS_ERROR} from '../actions/SmurfActions'
 const initialState = {
     smurfs: [],
-    fetchError: "",
-    loadingSmurfs: true,
-    sendingSmurfs: true,
+   // fetchError: "",
+    //loadingSmurfs: true,
+    //sendingSmurfs: true,
 }
 
 export const smurfReducer = (state = initialState, action) => {
@@ -26,6 +26,12 @@ export const smurfReducer = (state = initialState, action) => {
                 ...state,
                 //loadingSmurfs: false,
                 //fetchError: action.payload.message 
+            }
+
+        case PURGE_VILLAGE:
+            return{
+                 
+                smurfs: initialState
             }
 
         // case POST_SMURFS:

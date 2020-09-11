@@ -6,6 +6,10 @@ import {connect} from 'react-redux'
 
 
 function App (fetchSmurfs, postSmurfs) {
+  useEffect(() => {
+    fetchSmurfs();
+
+  }, [fetchSmurfs])
   
     return (
       <div className="App">

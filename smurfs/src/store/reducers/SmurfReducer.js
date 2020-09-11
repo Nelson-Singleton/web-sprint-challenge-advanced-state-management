@@ -9,22 +9,44 @@ const initialState = {
 export const smurfReducer = (state = initialState, action) => {
     switch (action.type){
         case FETCH_SMURFS:
-            return{}
+            return{
+                ...state,
+                loadingSmurfs: true
+            }
 
         case FETCH_SMURFS_SUCCESS:
-            return{}
+            return{
+                ...state, 
+                smurfs: action.payload,
+                loadingSmurfs: false
+            }
         
         case FETCH_SMURFS_ERROR:
-            return{}
+            return{
+                ...state,
+                loadingSmurfs: false,
+                fetchError: action.payload.message 
+            }
 
         case POST_SMURFS:
-            return{}
+            return{
+                ...state,
+                sendingSmurfs: true
+            }
 
         case POST_SMURFS_SUCCESS:
-            return{}
+            return{
+                ...state,
+                sendingSmurfs: false
+            }
         
         case POST_SMURFS_ERROR:
-            return{}
+            return{
+                ...state,
+                sendingSmurfs: false,
+                fetchError: action.payload.message
+
+            }
             
         default:
             return state;

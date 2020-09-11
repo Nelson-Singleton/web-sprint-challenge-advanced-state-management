@@ -5,12 +5,11 @@ import {fetchSmurfs, postSmurfs} from '../store/actions/SmurfActions'
 import {connect} from 'react-redux'
 
 
-function App (fetchSmurfs, postSmurfs) {
+function App ({fetchSmurfs}, {postSmurfs}) {
   useEffect(() => {
     fetchSmurfs();
-
   }, [fetchSmurfs])
-  
+
     return (
       <div className="App">
         <h1>SMURFS! W/Redux</h1>

@@ -17,9 +17,9 @@ export const fetchSmurfs = () => {
             type: FETCH_SMURFS
         })
         axios
-            .get("/smurfs")
+            .get("http://localhost:3333/smurfs")
             .then ((response) => {
-                console.log('response')
+                console.log(response)
                 dispatch ({type: FETCH_SMURFS_SUCCESS, payload: response.data}) 
             })
             .catch ((error) => {
@@ -38,9 +38,9 @@ export const postSmurfs = () => {
             type: POST_SMURFS
         })
         axios
-            .post("/smurfs")
+            .post("http://localhost:3333/smurfs")
             .then ((response) => {
-                console.log('response')
+                console.log(response)
                 dispatch ({type: POST_SMURFS_SUCCESS, payload: response.data}) 
             })
             .catch ((error) => {

@@ -7,7 +7,7 @@ export const FETCH_SMURFS_ERROR = "FETCH_SMURFS_ERROR"
 
 export const POST_SMURFS = "POST_SMURFS"
 export const POST_SMURFS_SUCCESS = "POST_SMURFS_SUCCESS"
-export const POST_SMURFS_FAILURE = "POST_SMURFS_FAILURE"
+export const POST_SMURFS_ERROR = "POST_SMURFS_ERROR"
 
 
 //action creators
